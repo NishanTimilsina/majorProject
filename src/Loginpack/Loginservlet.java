@@ -40,8 +40,9 @@ public class Loginservlet extends HttpServlet {
 		Loginservice sr=new Loginservice();
 		boolean valid=sr.login(user);
 		if(valid){
-			s.setAttribute("loggedin", true);
+			s.setAttribute("loggedin", username);
 			response.sendRedirect("welcome.jsp");
+			//System.out.println("welcome"+username);
 		}
 		else{
 			response.sendRedirect("Login.jsp");
